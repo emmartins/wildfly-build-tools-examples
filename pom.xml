@@ -62,7 +62,7 @@
         <module>server-provisioning-one-feature-pack-with-deps</module>
         <module>server-provisioning-one-feature-pack-without-deps</module>
         <module>server-provisioning-many-feature-packs-low-level-filtering</module>
-        <module>server-provisioning-many-feature-packs-extension-filtering</module>
+        <module>server-provisioning-many-feature-packs-subsystem-filtering</module>
     </modules>
     
     <properties>

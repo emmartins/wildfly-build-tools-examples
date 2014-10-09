@@ -22,12 +22,12 @@
 <server-provisioning xmlns="urn:wildfly:server-provisioning:1.0" extract-schemas="true" copy-module-artifacts="true">
     <feature-packs>
         <feature-pack groupId="org.wildfly.build" artifactId="wildfly-build-tools-examples-feature-pack-without-deps" version="${project.version}" />
-        <!-- a feature pack filtered to include a specific extension -->
+        <!-- a feature pack filtered to include a specific subsystem, such subsystem modules (and dependencies), and no content files -->
         <feature-pack groupId="org.wildfly.build" artifactId="wildfly-build-tools-examples-feature-pack-with-deps" version="${project.version}">
-            <extensions>
-                <extension module="org.jboss.as.ee"/>
-            </extensions>
-            <contents />
+            <subsystems>
+                <!-- all subsystems found in included modules could be automatically included, through the optional attribute 'transitive' set with value 'true' -->
+                <subsystem name="ee" />
+            </subsystems>
         </feature-pack>
     </feature-packs>
 </server-provisioning>
