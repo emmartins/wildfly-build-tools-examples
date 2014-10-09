@@ -21,8 +21,6 @@
   -->
 <server-provisioning xmlns="urn:wildfly:server-provisioning:1.0" extract-schemas="true" copy-module-artifacts="true">
     <feature-packs>
-        <feature-pack>
-            <artifact groupId="org.wildfly.build" artifactId="wildfly-build-tools-examples-feature-pack-with-deps" version="${project.version}"/>
-        </feature-pack>
+        <feature-pack groupId="org.wildfly.build" artifactId="wildfly-build-tools-examples-feature-pack-with-deps" version="${project.version}" />
     </feature-packs>
 </server-provisioning>

@@ -19,14 +19,11 @@
   ~ Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
   ~ 02110-1301 USA, or see the FSF site: http://www.fsf.org.
   -->
-<server-provisioning xmlns="urn:wildfly:server-provisioning:1.0" extract-schemas="true" copy-module-artifacts="true">
+<server-provisioning xmlns="urn:wildfly:server-provisioning:1.0" extract-schemas="false" copy-module-artifacts="false">
     <feature-packs>
-        <feature-pack>
-            <artifact groupId="org.wildfly.build" artifactId="wildfly-build-tools-examples-feature-pack-without-deps" version="${project.version}"/>
-        </feature-pack>
+        <feature-pack groupId="org.wildfly.build" artifactId="wildfly-build-tools-examples-feature-pack-without-deps" version="${project.version}" />
         <!-- a feature pack with filtered configs and related modules, since no module filters are defined -->
-        <feature-pack>
-            <artifact groupId="org.wildfly.build" artifactId="wildfly-build-tools-examples-feature-pack-with-deps" version="${project.version}"/>
+        <feature-pack groupId="org.wildfly.build" artifactId="wildfly-build-tools-examples-feature-pack-with-deps" version="${project.version}">
             <config>
                 <!-- a config file with subsystem filtering -->
                 <standalone output-file="standalone/configuration/standalone.xml" use-template="false">
@@ -41,16 +38,12 @@
             </config>
         </feature-pack>
         <!-- a feature pack with all configs filtered, and only a subset of modules due to module filters -->
-        <feature-pack>
-            <artifact groupId="org.wildfly.build" artifactId="wildfly-build-tools-examples-feature-pack-with-deps" version="${project.version}"/>
+        <feature-pack groupId="org.wildfly.build" artifactId="wildfly-build-tools-examples-feature-pack-with-deps" version="${project.version}">
             <modules>
                 <filter pattern="system/layers/base/org/wildfly/extension/undertow/main/module.xml" include="true" />
-                <filter pattern="**/module.xml" include="false" />
             </modules>
             <config />
-            <contents>
-                <filter pattern="*" include="false" />
-            </contents>
+            <contents />
         </feature-pack>
     </feature-packs>
 </server-provisioning>

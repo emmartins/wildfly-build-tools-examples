@@ -33,9 +33,9 @@
 	    <version>1.0.0.Alpha1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>wildfly-build-tools-examples-server-provisioning-multi-feature-packs</artifactId>
+    <artifactId>wildfly-build-tools-examples-server-provisioning-many-feature-packs-low-level-filtering</artifactId>
 
-    <name>WildFly Build Tools Examples: Server Provisioning of multiple Feature Packs</name>
+    <name>WildFly Build Tools Examples: Server Provisioning of multiple Feature Packs, including low level filtering</name>
     
     <packaging>pom</packaging>
 

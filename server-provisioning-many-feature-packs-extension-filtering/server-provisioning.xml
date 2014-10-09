@@ -19,8 +19,15 @@
   ~ Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
   ~ 02110-1301 USA, or see the FSF site: http://www.fsf.org.
   -->
-<server-provisioning xmlns="urn:wildfly:server-provisioning:1.0">
+<server-provisioning xmlns="urn:wildfly:server-provisioning:1.0" extract-schemas="true" copy-module-artifacts="true">
     <feature-packs>
         <feature-pack groupId="org.wildfly.build" artifactId="wildfly-build-tools-examples-feature-pack-without-deps" version="${project.version}" />
+        <!-- a feature pack filtered to include a specific extension -->
+        <feature-pack groupId="org.wildfly.build" artifactId="wildfly-build-tools-examples-feature-pack-with-deps" version="${project.version}">
+            <extensions>
+                <extension module="org.jboss.as.ee"/>
+            </extensions>
+            <contents />
+        </feature-pack>
     </feature-packs>
 </server-provisioning>
